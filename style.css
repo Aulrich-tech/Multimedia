@@ -1,0 +1,474 @@
+/* ============================================================
+   MULTIMEDIA SYSTEMS — study reference
+   Palette is drawn from the subject itself: an additive RGB
+   screen on a near-black display, with R / G / B assigned to
+   Module 1, Module 2, and the Quiz respectively.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root{
+  --bg: #0e1116;
+  --panel: #161b22;
+  --panel-2: #1c2229;
+  --line: #2a323c;
+  --text: #e6edf3;
+  --text-dim: #8b96a3;
+
+  --r: #ff5c5c;   /* Module 1 — Foundations */
+  --g: #4ade80;   /* Module 2 — Digital Graphics */
+  --b: #5b8def;   /* Quiz */
+
+  --r-dim: #4a2b2b;
+  --g-dim: #22392c;
+  --b-dim: #223148;
+
+  --radius: 3px;
+}
+
+*{ box-sizing: border-box; }
+
+html{ scroll-behavior: smooth; }
+
+body{
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', -apple-system, sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection{ background: var(--b); color: #0e1116; }
+
+a{ color: inherit; }
+
+code, .mono{
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* ---------- Top bar ---------- */
+
+.topbar{
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.9rem 2rem;
+  background: rgba(14,17,22,0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+}
+
+.brand{
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 1.05rem;
+  letter-spacing: 0.01em;
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.brand .chip{
+  display:inline-flex;
+  gap: 3px;
+}
+
+.brand .chip span{
+  width: 9px; height: 9px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.brand .chip .cr{ background: var(--r); }
+.brand .chip .cg{ background: var(--g); }
+.brand .chip .cb{ background: var(--b); }
+
+nav.mainnav{
+  display: flex;
+  gap: 0.25rem;
+}
+
+nav.mainnav a{
+  text-decoration: none;
+  color: var(--text-dim);
+  font-size: 0.92rem;
+  font-weight: 500;
+  padding: 0.4rem 0.8rem;
+  border-radius: var(--radius);
+  border: 1px solid transparent;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+nav.mainnav a:hover{ color: var(--text); }
+
+nav.mainnav a.active{
+  color: var(--text);
+  border-color: var(--line);
+  background: var(--panel);
+}
+
+/* ---------- Page shell ---------- */
+
+.page{
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 1.5rem 6rem;
+}
+
+.hero{
+  padding: 3.4rem 0 2.2rem;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 2.6rem;
+}
+
+.hero .eyebrow{
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  margin: 0 0 0.9rem;
+}
+
+.hero h1{
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 2.3rem;
+  line-height: 1.15;
+  margin: 0 0 0.8rem;
+  font-weight: 700;
+}
+
+.hero p.lead{
+  color: var(--text-dim);
+  font-size: 1.05rem;
+  max-width: 56ch;
+  margin: 0;
+}
+
+/* ---------- Section blocks ---------- */
+
+section.block{
+  margin-bottom: 2.6rem;
+  padding-left: 1.1rem;
+  border-left: 2px solid var(--line);
+}
+
+section.block.r{ border-left-color: var(--r); }
+section.block.g{ border-left-color: var(--g); }
+section.block.b{ border-left-color: var(--b); }
+
+section.block h2{
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.3rem;
+  margin: 0 0 0.9rem;
+}
+
+section.block h3{
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1rem;
+  margin: 1.3rem 0 0.5rem;
+  color: var(--text);
+}
+
+section.block p{ margin: 0 0 0.9rem; color: var(--text); }
+section.block p.dim{ color: var(--text-dim); }
+
+section.block ul, section.block ol{
+  margin: 0 0 0.9rem;
+  padding-left: 1.2rem;
+}
+section.block li{ margin-bottom: 0.45rem; }
+
+/* ---------- Tables ---------- */
+
+table{
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.6rem 0 1.3rem;
+  font-size: 0.92rem;
+}
+
+th, td{
+  text-align: left;
+  padding: 0.55rem 0.7rem;
+  border-bottom: 1px solid var(--line);
+}
+
+th{
+  color: var(--text-dim);
+  font-weight: 600;
+  font-size: 0.82rem;
+}
+
+tr:last-child td{ border-bottom: none; }
+
+/* ---------- Formula / worked-example cards ---------- */
+
+.formula{
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1rem 1.15rem;
+  margin: 0.9rem 0 1.3rem;
+}
+
+.formula .result{
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-top: 0.5rem;
+}
+
+.formula .result.r{ color: var(--r); }
+.formula .result.g{ color: var(--g); }
+.formula .result.b{ color: var(--b); }
+
+.formula-line{
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--text-dim);
+  font-size: 0.9rem;
+  margin: 0.15rem 0;
+}
+
+/* ---------- Term grid ---------- */
+
+.termgrid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.9rem 1.5rem;
+  margin: 0.6rem 0 1.3rem;
+}
+
+.term dt{
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 600;
+  font-size: 0.92rem;
+  margin-bottom: 0.15rem;
+}
+
+.term dd{
+  margin: 0;
+  color: var(--text-dim);
+  font-size: 0.88rem;
+}
+
+@media (max-width: 620px){
+  .termgrid{ grid-template-columns: 1fr; }
+}
+
+/* ---------- Swatches (color model demo) ---------- */
+
+.swatchrow{
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin: 0.7rem 0 1.3rem;
+}
+
+.swatch{
+  flex: 1 1 120px;
+  border-radius: var(--radius);
+  padding: 0.9rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  color: #0e1116;
+}
+
+/* ---------- Nav footer between modules ---------- */
+
+.pagenav{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line);
+}
+
+.pagenav a{
+  text-decoration: none;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--text-dim);
+}
+
+.pagenav a:hover{ color: var(--text); }
+.pagenav a span{ display:block; font-size: 0.75rem; font-weight: 400; font-family:'Inter',sans-serif; color: var(--text-dim); margin-bottom:0.2rem; }
+
+/* ============================================================
+   QUIZ
+   ============================================================ */
+
+.quiz-progress{
+  display:flex; align-items:center; gap:0.8rem;
+  margin-bottom: 2rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+  color: var(--text-dim);
+}
+
+.quiz-progress .bar{
+  flex:1;
+  height: 6px;
+  background: var(--panel);
+  border-radius: 3px;
+  overflow: hidden;
+}
+.quiz-progress .bar-fill{
+  height: 100%;
+  background: var(--b);
+  width: 0%;
+  transition: width 0.25s ease;
+}
+
+.qcard{
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.4rem 1.4rem 1.2rem;
+  margin-bottom: 1.4rem;
+}
+
+.qcard .qmeta{
+  display:flex; justify-content: space-between; align-items:center;
+  margin-bottom: 0.7rem;
+}
+
+.qtag{
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 2px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.qtag.objective{ background: var(--b-dim); color: var(--b); }
+.qtag.computation{ background: var(--g-dim); color: var(--g); }
+
+.qnum{ color: var(--text-dim); font-size: 0.85rem; font-family:'JetBrains Mono', monospace; }
+
+.qcard p.prompt{
+  font-size: 1.02rem;
+  margin: 0 0 1rem;
+}
+
+.options{
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.option{
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.65rem 0.85rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  cursor: pointer;
+  background: var(--panel-2);
+  font-size: 0.94rem;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.option:hover{ border-color: var(--b); }
+
+.option input{ accent-color: var(--b); }
+
+.option.correct{ border-color: var(--g); background: var(--g-dim); }
+.option.incorrect{ border-color: var(--r); background: var(--r-dim); }
+
+.compute-row{
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.compute-row input[type="text"]{
+  flex: 1 1 220px;
+  background: var(--panel-2);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 0.6rem 0.75rem;
+  color: var(--text);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.94rem;
+}
+
+.compute-row input[type="text"]:focus{
+  outline: none;
+  border-color: var(--g);
+}
+
+.checkbtn{
+  background: var(--panel-2);
+  border: 1px solid var(--line);
+  color: var(--text);
+  border-radius: var(--radius);
+  padding: 0.6rem 1rem;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 0.88rem;
+  cursor: pointer;
+}
+.checkbtn:hover{ border-color: var(--g); }
+
+.feedback{
+  margin-top: 0.7rem;
+  font-size: 0.88rem;
+  font-family: 'JetBrains Mono', monospace;
+  display: none;
+}
+.feedback.show{ display: block; }
+.feedback.right{ color: var(--g); }
+.feedback.wrong{ color: var(--r); }
+
+.explain{
+  margin-top: 0.5rem;
+  font-size: 0.86rem;
+  color: var(--text-dim);
+  display: none;
+}
+.explain.show{ display: block; }
+
+.quizbar{
+  position: sticky;
+  bottom: 0;
+  background: rgba(14,17,22,0.95);
+  backdrop-filter: blur(8px);
+  border-top: 1px solid var(--line);
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2rem -1.5rem 0;
+}
+
+.gradebtn{
+  background: var(--b);
+  color: #0e1116;
+  border: none;
+  border-radius: var(--radius);
+  padding: 0.75rem 1.4rem;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+.gradebtn:hover{ opacity: 0.92; }
+
+#score-summary{
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.92rem;
+  color: var(--text-dim);
+}
+
+#score-summary strong{ color: var(--text); }
+
+@media (max-width: 480px){
+  .topbar{ padding: 0.8rem 1.1rem; flex-wrap: wrap; }
+  .hero h1{ font-size: 1.7rem; }
+}

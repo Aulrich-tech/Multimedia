@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Module 2 — Digital Graphics | Multimedia Systems</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand"><span class="chip"><span class="cr"></span><span class="cg"></span><span class="cb"></span></span> Multimedia Systems</div>
+  <nav class="mainnav">
+    <a href="index.html">Module 1</a>
+    <a href="module2.html" class="active">Module 2</a>
+    <a href="quiz.html">Quiz</a>
+  </nav>
+</header>
+
+<main class="page">
+
+  <div class="hero">
+    <p class="eyebrow">module 2 · prelim</p>
+    <h1>Digital Graphics</h1>
+    <p class="lead">Raster vs. vector, the color models behind every screen and printer, file formats, and the Photoshop concepts that tie it together.</p>
+  </div>
+
+  <section class="block g" id="raster-vector">
+    <h2>Raster vs. vector</h2>
+    <table>
+      <tr><th></th><th>Raster (bitmap)</th><th>Vector</th></tr>
+      <tr><td>Made of</td><td>Grid of pixels</td><td>Math, paths, and curves</td></tr>
+      <tr><td>Scaling</td><td>Pixelated when enlarged — resolution-dependent</td><td>Scales infinitely, no quality loss — resolution-independent</td></tr>
+      <tr><td>Best for</td><td>Photographs, detailed images</td><td>Logos, icons, type, flat art</td></tr>
+      <tr><td>Adobe tool</td><td>Photoshop</td><td>Illustrator</td></tr>
+      <tr><td>Formats</td><td>JPEG, PNG, GIF, WEBP</td><td>SVG, AI, EPS, PDF</td></tr>
+    </table>
+    <p class="dim">Photos are always raster; logos and type are best as vectors. A poster is usually a raster photo background with a vector title/logo on top.</p>
+    <ul>
+      <li>Pixels = inches × DPI</li>
+      <li>Screens run roughly 72–150 PPI</li>
+      <li>Prints run roughly 300 DPI</li>
+      <li>A3 = 3508 × 4961 px</li>
+    </ul>
+  </section>
+
+  <section class="block g" id="color-models">
+    <h2>Color models</h2>
+    <table>
+      <tr><th>Model</th><th>Type</th><th>Notation</th><th>Use for</th></tr>
+      <tr><td>RGB</td><td>Additive</td><td>0–255 × 3</td><td>Screen, video — all digital devices</td></tr>
+      <tr><td>HEX</td><td>Additive</td><td>#RRGGBB (00–FF)</td><td>Web/UI — compact form of RGB</td></tr>
+      <tr><td>CMYK</td><td>Subtractive</td><td>0–100% × 4</td><td>Print — physical posters</td></tr>
+      <tr><td>HSB/HSV</td><td>Perceptual</td><td>H 0–360°, S/B %</td><td>Picking and adjusting colors by hand</td></tr>
+    </table>
+    <p><strong>Additive</strong> color occurs when combining all colors produces light (white). <strong>Subtractive</strong> is when combining all colors produces black (ink). The RGB gamut is more vivid than the CMYK gamut, so vivid screen colors dull in print.</p>
+    <div class="swatchrow">
+      <div class="swatch" style="background:#5B8DEF;">RGB — additive<br>screen, video</div>
+      <div class="swatch" style="background:#4ADE80;">HEX — additive<br>web/UI shorthand</div>
+      <div class="swatch" style="background:#e6edf3;">CMYK — subtractive<br>print</div>
+    </div>
+    <p class="dim"><strong>DPI</strong> (dots per inch) measures physical printer resolution. <strong>PPI</strong> (pixels per inch) measures digital image and screen resolution.</p>
+  </section>
+
+  <section class="block g" id="hex-conversion">
+    <h2>Converting RGB to HEX</h2>
+    <p>HEX is RGB written in base-16. Each channel becomes two hex digits (00–FF).</p>
+    <div class="formula">
+      <div class="formula-line">RGB (46, 84, 150) → 2E · 54 · 96</div>
+      <div class="result g">#2E5496</div>
+    </div>
+    <h3>Worked example — computing one channel by hand</h3>
+    <p class="dim">Take R = 46. Divide by 16 repeatedly and read the remainders from bottom to top:</p>
+    <div class="formula">
+      <div class="formula-line">46 ÷ 16 = 2, remainder 14 → 14 in hex is E</div>
+      <div class="formula-line">2 ÷ 16 = 0, remainder 2</div>
+      <div class="formula-line">Read remainders bottom→top: 2, then E</div>
+      <div class="result g">R = 2E</div>
+    </div>
+    <p>Reverse conversion works by splitting the hex string into pairs and converting each pair to decimal — e.g. #1F3864 → 31, 56, 100. Black is #000000, white is #FFFFFF.</p>
+  </section>
+
+  <section class="block g" id="formats">
+    <h2>Formats and compression</h2>
+    <table>
+      <tr><th>Format</th><th>Type</th><th>Compression</th><th>Transparency</th><th>Best for</th></tr>
+      <tr><td>JPEG</td><td>Raster</td><td>Lossy</td><td>No</td><td>Photos where size matters</td></tr>
+      <tr><td>PNG</td><td>Raster</td><td>Lossless</td><td>Yes (alpha)</td><td>Sharp edges, text, logos + transparency</td></tr>
+      <tr><td>WEBP</td><td>Raster</td><td>Lossy/lossless</td><td>Yes</td><td>Modern web — small + good quality</td></tr>
+      <tr><td>GIF</td><td>Raster</td><td>Lossless (256 colors)</td><td>Yes (1-bit)</td><td>Simple animation, low-color</td></tr>
+      <tr><td>SVG</td><td>Vector</td><td>N/A (code)</td><td>Yes</td><td>Logos, icons, type — scales forever</td></tr>
+    </table>
+    <h3>Decision guide</h3>
+    <ul>
+      <li>Photograph? → JPEG or WEBP</li>
+      <li>Transparency / crisp text? → PNG or WEBP</li>
+      <li>Logo/icon/type that must scale? → SVG</li>
+      <li>Short animation? → GIF or WEBP</li>
+      <li>Modern web, size matters? → WEBP</li>
+    </ul>
+  </section>
+
+  <section class="block g" id="photoshop">
+    <h2>Photoshop core concepts</h2>
+    <table>
+      <tr><th>For…</th><th>Mode</th><th>Resolution</th></tr>
+      <tr><td>Screen / web / video</td><td>RGB</td><td>72–150 PPI</td></tr>
+      <tr><td>Print</td><td>CMYK</td><td>300 DPI</td></tr>
+    </table>
+    <h3>Kinds of layers</h3>
+    <ul>
+      <li><strong>Pixels (raster)</strong> — ordinary image content</li>
+      <li><strong>Type</strong> — live, re-editable text</li>
+      <li><strong>Shape</strong> — vector rectangles, ellipses, custom shapes</li>
+      <li><strong>Adjustment</strong> — color/tonal change applied to layers beneath it</li>
+      <li><strong>Smart object</strong> — protects original data through repeated transforms</li>
+    </ul>
+    <h3>Non-destructive editing</h3>
+    <p class="dim">Making changes that never permanently alter the original pixels, so they stay reversible.</p>
+    <ul>
+      <li>Eraser → Layer mask</li>
+      <li>Image adjustments → Adjustment layer</li>
+      <li>Scaling → Smart object</li>
+      <li>Only ever copy → Duplicate first</li>
+    </ul>
+    <p><strong>Layer masks</strong> are alpha channels: white reveals, black conceals, grey is partial.</p>
+    <h3>Exporting</h3>
+    <p><strong>PSD</strong> is your layered, editable master file — keep it always. <strong>Export As</strong> flattens the image to JPEG/PNG/WEBP for delivery. A JPEG cannot be unflattened.</p>
+  </section>
+
+  <section class="block g" id="key-terms-2">
+    <h2>Key terms</h2>
+    <dl class="termgrid">
+      <div class="term"><dt>Raster / vector</dt><dd>Pixels / math paths.</dd></div>
+      <div class="term"><dt>Resolution</dt><dd>Pixel dimension (spatial detail).</dd></div>
+      <div class="term"><dt>Pixelation</dt><dd>Blocky results from enlarging a raster past native size.</dd></div>
+      <div class="term"><dt>RGB / CMYK</dt><dd>Additive light (screen) / subtractive ink (print).</dd></div>
+      <div class="term"><dt>HEX</dt><dd>RGB in hexadecimal, #RRGGBB (00–FF).</dd></div>
+      <div class="term"><dt>HSB / HSV</dt><dd>Hue, saturation, brightness — intuitive color picking.</dd></div>
+      <div class="term"><dt>Gamut</dt><dd>Range of reproducible colors (RGB &gt; CMYK).</dd></div>
+      <div class="term"><dt>Lossy / lossless</dt><dd>Discards detail / keeps every pixel.</dd></div>
+      <div class="term"><dt>Generation loss</dt><dd>Cumulative damage from re-saving a lossy file.</dd></div>
+      <div class="term"><dt>Alpha channel</dt><dd>Stored transparency (PNG, WEBP).</dd></div>
+      <div class="term"><dt>Layer / layer mask</dt><dd>One sheet in the stack / greyscale visibility control.</dd></div>
+      <div class="term"><dt>Adjustment layer</dt><dd>Color change on its own layer — re-editable.</dd></div>
+      <div class="term"><dt>Smart object</dt><dd>Container preserving original data through transforms.</dd></div>
+      <div class="term"><dt>Non-destructive</dt><dd>Changes that never alter the original pixels.</dd></div>
+      <div class="term"><dt>PSD</dt><dd>Layered editable master (vs. a flattened export).</dd></div>
+    </dl>
+  </section>
+
+  <div class="pagenav">
+    <a href="index.html"><span></span>← Module 1 — Intro to Multimedia</a>
+    <a href="quiz.html">Next<span></span>Take the quiz →</a>
+  </div>
+
+</main>
+
+</body>
+</html>
