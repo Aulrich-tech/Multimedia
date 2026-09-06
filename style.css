@@ -17,10 +17,12 @@
 
   --r: #ff5c5c;   /* Module 1 — Foundations */
   --g: #4ade80;   /* Module 2 — Digital Graphics */
+  --y: #f5b942;   /* Module 3 — Typography & Visuals (off the RGB screen model, on purpose) */
   --b: #5b8def;   /* Quiz */
 
   --r-dim: #4a2b2b;
   --g-dim: #22392c;
+  --y-dim: #4a3a1c;
   --b-dim: #223148;
 
   --radius: 3px;
@@ -85,6 +87,7 @@ code, .mono{
 }
 .brand .chip .cr{ background: var(--r); }
 .brand .chip .cg{ background: var(--g); }
+.brand .chip .cy{ background: var(--y); }
 .brand .chip .cb{ background: var(--b); }
 
 nav.mainnav{
@@ -157,6 +160,7 @@ section.block{
 
 section.block.r{ border-left-color: var(--r); }
 section.block.g{ border-left-color: var(--g); }
+section.block.y{ border-left-color: var(--y); }
 section.block.b{ border-left-color: var(--b); }
 
 section.block h2{
@@ -223,6 +227,7 @@ tr:last-child td{ border-bottom: none; }
 
 .formula .result.r{ color: var(--r); }
 .formula .result.g{ color: var(--g); }
+.formula .result.y{ color: var(--y); }
 .formula .result.b{ color: var(--b); }
 
 .formula-line{
@@ -273,6 +278,26 @@ tr:last-child td{ border-bottom: none; }
   padding: 0.9rem;
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.8rem;
+  color: #0e1116;
+}
+
+/* ---------- 60-30-10 color distribution bar ---------- */
+
+.colorbar{
+  display: flex;
+  height: 46px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin: 0.6rem 0 1.3rem;
+}
+
+.colorbar span{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  font-weight: 600;
   color: #0e1116;
 }
 
