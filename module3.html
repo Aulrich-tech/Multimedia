@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Module 3 — Typography and Visuals | Multimedia Systems</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand"><span class="chip"><span class="cr"></span><span class="cg"></span><span class="cy"></span><span class="cb"></span></span> Multimedia Systems</div>
+  <nav class="mainnav">
+    <a href="index.html">Module 1</a>
+    <a href="module2.html">Module 2</a>
+    <a href="module3.html" class="active">Module 3</a>
+    <a href="quiz.html">Quiz</a>
+  </nav>
+</header>
+
+<main class="page">
+
+  <div class="hero">
+    <p class="eyebrow">module 3 · prelim</p>
+    <h1>Typography and Visuals</h1>
+    <p class="lead">How letters are built and classified, the mechanics that give text hierarchy, and the color theory, design principles, and composition rules that hold a visual together.</p>
+  </div>
+
+  <section class="block y" id="typeface-font">
+    <h2>Typeface vs. font</h2>
+    <dl class="termgrid">
+      <div class="term"><dt>Typeface</dt><dd>The design of a set of characters — the shapes themselves. A font family, e.g. Barlow.</dd></div>
+      <div class="term"><dt>Font</dt><dd>One specific size, weight, and style of that typeface. E.g. Barlow Regular 44pt.</dd></div>
+    </dl>
+    <p class="dim">A typeface is the design; a font is one particular instance of it — a single weight and size you'd actually set on the page.</p>
+  </section>
+
+  <section class="block y" id="letter-anatomy">
+    <h2>Anatomy of a letter</h2>
+    <p class="dim">A large x-height is the best single predictor of whether small text will be readable.</p>
+
+    <div class="formula">
+      <svg viewBox="0 0 640 220" xmlns="http://www.w3.org/2000/svg">
+        <!-- guide lines -->
+        <line x1="0" y1="30"  x2="640" y2="30"  stroke="var(--line)" stroke-width="1" stroke-dasharray="4 3"/>
+        <line x1="0" y1="50"  x2="640" y2="50"  stroke="var(--line)" stroke-width="1" stroke-dasharray="4 3"/>
+        <line x1="0" y1="110" x2="640" y2="110" stroke="var(--line)" stroke-width="1" stroke-dasharray="4 3"/>
+        <line x1="0" y1="170" x2="640" y2="170" stroke="var(--text-dim)" stroke-width="1.5"/>
+        <line x1="0" y1="205" x2="640" y2="205" stroke="var(--line)" stroke-width="1" stroke-dasharray="4 3"/>
+
+        <!-- sample letters -->
+        <text x="20"  y="170" font-family="Arial, sans-serif" font-size="150" fill="var(--text)">H</text>
+        <text x="150" y="170" font-family="Arial, sans-serif" font-size="150" fill="var(--text)">x</text>
+        <text x="255" y="170" font-family="Arial, sans-serif" font-size="150" fill="var(--text)">p</text>
+        <text x="375" y="170" font-family="Arial, sans-serif" font-size="150" fill="var(--text)">l</text>
+
+        <!-- labels -->
+        <text x="450" y="26"  font-family="'JetBrains Mono', monospace" font-size="12" fill="var(--text-dim)">Ascender line</text>
+        <text x="450" y="46"  font-family="'JetBrains Mono', monospace" font-size="12" fill="var(--y)">Cap height</text>
+        <text x="450" y="106" font-family="'JetBrains Mono', monospace" font-size="12" fill="var(--y)">x-height</text>
+        <text x="450" y="166" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="600" fill="var(--text)">Baseline</text>
+        <text x="450" y="201" font-family="'JetBrains Mono', monospace" font-size="12" fill="var(--text-dim)">Descender depth</text>
+      </svg>
+    </div>
+
+    <dl class="termgrid">
+      <div class="term"><dt>Baseline</dt><dd>Invisible horizontal line on which most letters sit.</dd></div>
+      <div class="term"><dt>Cap height</dt><dd>Height of uppercase letters — baseline to the top of the capital line.</dd></div>
+      <div class="term"><dt>X-height</dt><dd>Height of lowercase letters.</dd></div>
+      <div class="term"><dt>Ascender</dt><dd>Part of lowercase letters that extends above the x-height, e.g. b, d, f, h, l, t.</dd></div>
+      <div class="term"><dt>Descender</dt><dd>Parts of lowercase letters that extend below the baseline, e.g. g, j, p, q, y.</dd></div>
+    </dl>
+  </section>
+
+  <section class="block y" id="type-mechanics">
+    <h2>Type mechanics</h2>
+    <dl class="termgrid">
+      <div class="term"><dt>Font weight</dt><dd>Thickness of the strokes — light, regular, medium, or bold. The cheapest source of hierarchy.</dd></div>
+      <div class="term"><dt>Kerning</dt><dd>Adjustment of the space between two individual letters so they look visually balanced.</dd></div>
+      <div class="term"><dt>Tracking</dt><dd>Overall space between all the letters in a word, line, or block. Wide tracking is a film-title convention.</dd></div>
+      <div class="term"><dt>Leading</dt><dd>Vertical space between lines of text — tight, normal, or loose.</dd></div>
+      <div class="term"><dt>Point size</dt><dd>Size of the typeface. 1 point = 1/72 inch.</dd></div>
+    </dl>
+
+    <h3>Worked example — point size to inches</h3>
+    <p class="dim">Since 1 point = 1/72 inch, divide the point size by 72:</p>
+    <div class="formula">
+      <div class="formula-line">36pt ÷ 72 = 0.5</div>
+      <div class="result y">0.5 in</div>
+    </div>
+  </section>
+
+  <section class="block y" id="classifications">
+    <h2>Six classifications of typography</h2>
+    <table>
+      <tr><th>Category</th><th>Looks</th><th>Feel / typically used</th></tr>
+      <tr><td>Serif</td><td>Small feet at the ends — Times, Garamond</td><td>Traditional, authoritative, literary, period dramas, credits, print body text</td></tr>
+      <tr><td>Sans-serif</td><td>No feet; clean strokes — Helvetica, Futura</td><td>Modern, neutral, clear — UI, subtitles, contemporary titles</td></tr>
+      <tr><td>Slab serif</td><td>Thick, block-like serif — Rockwell</td><td>Bold, sturdy, confident — posters, impact headlines</td></tr>
+      <tr><td>Script</td><td>Joined, handwriting-like — Brush Script</td><td>Elegant or personal — romance, decorative titles, use sparingly</td></tr>
+      <tr><td>Display</td><td>Highly stylized, for large sizes only</td><td>Distinct mood — genre titles, never body text</td></tr>
+      <tr><td>Monospace</td><td>Every character has the same width</td><td>Technical, code, screenplay format — typewriter feel</td></tr>
+    </table>
+  </section>
+
+  <section class="block y" id="titles-credits">
+    <h2>Titles, credits &amp; hierarchy</h2>
+    <p>Limited to two typefaces.</p>
+    <dl class="termgrid">
+      <div class="term"><dt>Legibility</dt><dd>How easily individual characters are distinguished — a property of the typeface.</dd></div>
+      <div class="term"><dt>Readability</dt><dd>How easily words and blocks are read — a property of how you set the type.</dd></div>
+      <div class="term"><dt>Hierarchy</dt><dd>Size, weight, colour, and position decide what is read first.</dd></div>
+    </dl>
+
+    <h3>Titles / key art vs. on-screen text</h3>
+    <table>
+      <tr><th></th><th>Film titles / key art</th><th>Credits / on-screen text</th></tr>
+      <tr><td>Goal</td><td>Set genre and mood — memorable and distinctive</td><td>Readable quickly while scrolling</td></tr>
+      <tr><td>Style</td><td>Display or decorative; expressive weight and tracking</td><td>Clean serif or sans serif with large x-height</td></tr>
+      <tr><td>Technique</td><td>Wide tracking, custom effects, texture, few words</td><td>Consistent size and spacing, stronger contrast with background</td></tr>
+      <tr><td>Avoid</td><td>Illegible or clichéd font that fights the concept</td><td>Too small, low contrast, or too many typefaces at once</td></tr>
+    </table>
+  </section>
+
+  <section class="block y" id="color-theory">
+    <h2>Color theory</h2>
+    <p><strong>Color</strong> is the fastest lever on mood — it works before the viewer reads a word.</p>
+
+    <div class="swatchrow">
+      <div class="swatch" style="background:#5b8def;">Complementary<br>opposite hues, max contrast</div>
+      <div class="swatch" style="background:#4ade80;">Analogous<br>3+ neighboring hues</div>
+      <div class="swatch" style="background:#f5b942;">Triadic<br>3 hues evenly spaced</div>
+    </div>
+
+    <dl class="termgrid">
+      <div class="term"><dt>Complementary</dt><dd>Two colors directly opposite each other. Maximum contrast and energy — teal and orange is the blockbuster default.</dd></div>
+      <div class="term"><dt>Analogous</dt><dd>Three or more colors next to each other. Harmonious and calm, but low contrast — usually needs one deliberate accent.</dd></div>
+      <div class="term"><dt>Triadic</dt><dd>Three colors evenly spaced around the wheel. Vibrant and balanced, but hard to control — one color must dominate.</dd></div>
+    </dl>
+
+    <h3>60-30-10 rule</h3>
+    <p class="dim">A design guideline for distributing colors in a composition: 60% dominant, 30% secondary, 10% accent. Most first drafts use three strong colors in equal amounts — that's the failure mode.</p>
+    <div class="colorbar">
+      <span style="width:60%; background:var(--y);">60% Dominant</span>
+      <span style="width:30%; background:var(--g);">30% Secondary</span>
+      <span style="width:10%; background:var(--r);">10%</span>
+    </div>
+  </section>
+
+  <section class="block y" id="design-principles">
+    <h2>Design principles — C.R.A.P.</h2>
+    <table>
+      <tr><th></th><th>Principle</th><th>Meaning</th></tr>
+      <tr><td>C</td><td>Contrast</td><td>Creating a noticeable difference between elements. If two elements are only slightly different, make them very different — or make one of them the same.</td></tr>
+      <tr><td>R</td><td>Repetition</td><td>Reusing visual elements consistently throughout the design: one color, one typeface, one spacing rhythm.</td></tr>
+      <tr><td>A</td><td>Alignment</td><td>Positioning elements so they line up with each other — every element on one edge.</td></tr>
+      <tr><td>P</td><td>Proximity</td><td>Placing related elements together — how viewers know the credit block is one thing and the title is another.</td></tr>
+    </table>
+  </section>
+
+  <section class="block y" id="composition">
+    <h2>Composition</h2>
+    <p><strong>Composition</strong> is the arrangement and organization of visual elements within a design or image — placement within the frame.</p>
+    <dl class="termgrid">
+      <div class="term"><dt>Rule of thirds</dt><dd>Key subject sits on the line of a 3×3 grid or at their intersections rather than dead centre.</dd></div>
+      <div class="term"><dt>Balance</dt><dd>Distribution of visual weight among elements. Symmetry is formal and stable (deliberately unsettling in horror); asymmetry is more dynamic but still has to feel settled, not accidental.</dd></div>
+      <div class="term"><dt>Focal point</dt><dd>Main area or element that attracts the viewer's attention first. A poster without one reads as noise.</dd></div>
+      <div class="term"><dt>Leading line</dt><dd>Line or visual element that guides the viewer's eye toward a particular area — roads, edges, and the direction of a gaze all do this.</dd></div>
+      <div class="term"><dt>Negative space</dt><dd>The empty or unoccupied area surrounding the main subject.</dd></div>
+    </dl>
+  </section>
+
+  <section class="block y" id="gestalt">
+    <h2>Gestalt principles</h2>
+    <p class="dim"><strong>Gestalt</strong> explains how people naturally organize and interpret visual elements as a whole — why we see things as groups.</p>
+    <dl class="termgrid">
+      <div class="term"><dt>Proximity</dt><dd>Near things are seen as a group.</dd></div>
+      <div class="term"><dt>Similarity</dt><dd>Things that look alike are grouped — similar in color, shape, size, font, or texture.</dd></div>
+      <div class="term"><dt>Closure</dt><dd>The brain's tendency to complete an implied shape or image.</dd></div>
+      <div class="term"><dt>Continuity</dt><dd>Eyes naturally follow lines, curves, or patterns in a continuous direction.</dd></div>
+      <div class="term"><dt>Figure/ground</dt><dd>People naturally distinguish between a main figure and its background.</dd></div>
+    </dl>
+  </section>
+
+  <section class="block y" id="critique">
+    <h2>Critique block for a poster</h2>
+    <ul>
+      <li><strong>Focal image</strong> — one dominant image the eye lands on first.</li>
+      <li><strong>Clear title</strong> — one or two typefaces, legible at thumbnail size.</li>
+      <li><strong>Deliberate palette</strong> — signals the genre, written down as HEX codes.</li>
+      <li><strong>Negative space</strong> — room to breathe; not every gap filled.</li>
+      <li><strong>Clean hierarchy</strong> — title, then tagline, then credits.</li>
+    </ul>
+  </section>
+
+  <section class="block y" id="key-terms-3">
+    <h2>Key terms</h2>
+    <dl class="termgrid">
+      <div class="term"><dt>Typeface / font</dt><dd>The character design / one specific size-weight-style of it.</dd></div>
+      <div class="term"><dt>Baseline</dt><dd>The line most letters sit on.</dd></div>
+      <div class="term"><dt>Cap height / x-height</dt><dd>Uppercase height / lowercase height, from the baseline.</dd></div>
+      <div class="term"><dt>Ascender / descender</dt><dd>Strokes above the x-height / strokes below the baseline.</dd></div>
+      <div class="term"><dt>Kerning / tracking</dt><dd>Space between a letter pair / space across a whole line.</dd></div>
+      <div class="term"><dt>Leading</dt><dd>Vertical space between lines of text.</dd></div>
+      <div class="term"><dt>Point size</dt><dd>Type size; 1pt = 1/72 inch.</dd></div>
+      <div class="term"><dt>Legibility / readability</dt><dd>Distinguishing characters / reading blocks of text with ease.</dd></div>
+      <div class="term"><dt>Hierarchy</dt><dd>Size, weight, colour, and position deciding what's read first.</dd></div>
+      <div class="term"><dt>Complementary / analogous / triadic</dt><dd>Opposite hues / neighboring hues / three evenly-spaced hues.</dd></div>
+      <div class="term"><dt>60-30-10 rule</dt><dd>Dominant / secondary / accent color distribution.</dd></div>
+      <div class="term"><dt>C.R.A.P.</dt><dd>Contrast, Repetition, Alignment, Proximity.</dd></div>
+      <div class="term"><dt>Rule of thirds</dt><dd>Placing the subject on a 3×3 grid line or intersection.</dd></div>
+      <div class="term"><dt>Focal point / leading line</dt><dd>What the eye lands on first / what guides it there.</dd></div>
+      <div class="term"><dt>Negative space</dt><dd>Deliberately empty area around the subject.</dd></div>
+      <div class="term"><dt>Gestalt</dt><dd>Proximity, similarity, closure, continuity, figure/ground.</dd></div>
+    </dl>
+  </section>
+
+  <div class="pagenav">
+    <a href="module2.html"><span></span>← Module 2 — Digital Graphics</a>
+    <a href="quiz.html">Next<span></span>Take the quiz →</a>
+  </div>
+
+</main>
+
+</body>
+</html>
