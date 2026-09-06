@@ -9,10 +9,11 @@
 <body>
 
 <header class="topbar">
-  <div class="brand"><span class="chip"><span class="cr"></span><span class="cg"></span><span class="cb"></span></span> Multimedia Systems</div>
+  <div class="brand"><span class="chip"><span class="cr"></span><span class="cg"></span><span class="cy"></span><span class="cb"></span></span> Multimedia Systems</div>
   <nav class="mainnav">
     <a href="index.html">Module 1</a>
     <a href="module2.html">Module 2</a>
+    <a href="module3.html">Module 3</a>
     <a href="quiz.html" class="active">Quiz</a>
   </nav>
 </header>
@@ -22,11 +23,11 @@
   <div class="hero">
     <p class="eyebrow">prelim · self-check</p>
     <h1>Quiz</h1>
-    <p class="lead">24 objective items plus 10 computation problems pulled straight from Module 1 and Module 2. Answer everything, then grade it at the bottom.</p>
+    <p class="lead">40 objective items plus 12 computation problems pulled straight from Module 1, Module 2, and Module 3. Answer everything, then grade it at the bottom.</p>
   </div>
 
   <div class="quiz-progress">
-    <span id="progress-label">0 / 34 answered</span>
+    <span id="progress-label">0 / 52 answered</span>
     <div class="bar"><div class="bar-fill" id="progress-fill"></div></div>
   </div>
 
@@ -49,7 +50,7 @@
    =================================================================== */
 const QUESTIONS = [
 
-  // ---------------- OBJECTIVE (24) ----------------
+  // ---------------- OBJECTIVE — MODULE 1 & 2 (25) ----------------
   {type:"objective", prompt:"Multimedia is best defined as computer-controlled, integrated delivery of two or more media elements, often with:",
    options:["Interactivity","Encryption","Compression","Redundancy"], correct:0,
    explain:"Multimedia is a computer-controlled, integrated delivery of multiple media elements — often with interactivity that lets the user influence what is presented, and when."},
@@ -150,7 +151,68 @@ const QUESTIONS = [
    options:["Preserve the original data through repeated transforms","Flatten all layers permanently","Convert raster images to vector","Store the print color profile"], correct:0,
    explain:"Smart Objects protect the original data so that scaling and other transforms stay non-destructive and reversible."},
 
-  // ---------------- COMPUTATION (10) ----------------
+  // ---------------- OBJECTIVE — MODULE 3 (15) ----------------
+  {type:"objective", prompt:"A typeface is best described as:",
+   options:["The design of a set of characters — the shapes themselves","One specific size, weight, and style of a typeface","A file format for storing fonts","The spacing between two letters"], correct:0,
+   explain:"Typeface is the design of a set of characters (e.g. Barlow); a font is one specific size, weight, and style of that typeface (e.g. Barlow Regular 44pt)."},
+
+  {type:"objective", prompt:"Which single measurement is the best predictor of whether small text will be readable?",
+   options:["Cap height","A large x-height","Tracking","Point size"], correct:1,
+   explain:"A large x-height is called out as the best single predictor of whether small text will be readable."},
+
+  {type:"objective", prompt:"Which letters have descenders?",
+   options:["b, d, f, h, l, t","g, j, p, q, y","H, X, P, L","A, B, C, D"], correct:1,
+   explain:"Descenders are parts of lowercase letters that extend below the baseline, such as g, j, p, q, and y."},
+
+  {type:"objective", prompt:"The invisible horizontal line that most letters sit on is the:",
+   options:["Cap line","X-height","Baseline","Ascender line"], correct:2,
+   explain:"The baseline is the invisible horizontal line on which most letters sit."},
+
+  {type:"objective", prompt:"Adjusting the space between two individual letters so they look visually balanced is called:",
+   options:["Leading","Kerning","Tracking","Hierarchy"], correct:1,
+   explain:"Kerning adjusts the space between two individual letters; tracking adjusts overall spacing across a whole word, line, or block."},
+
+  {type:"objective", prompt:"Wide letter tracking is a well-known convention in:",
+   options:["Body text in novels","Film titles","Screenplay formatting","Spreadsheets"], correct:1,
+   explain:"Wide tracking is called out specifically as a film-title convention."},
+
+  {type:"objective", prompt:"One point equals:",
+   options:["1/12 inch","1/72 inch","1/100 inch","1 pixel"], correct:1,
+   explain:"Point size is a measurement of typeface size where 1 point = 1/72 inch."},
+
+  {type:"objective", prompt:"A typeface with small feet at the ends of its strokes, like Times or Garamond, is classified as:",
+   options:["Sans-serif","Serif","Slab serif","Monospace"], correct:1,
+   explain:"Serif typefaces have small feet at the ends of strokes; sans-serif has none, and slab serif has thick, block-like serifs."},
+
+  {type:"objective", prompt:"A typeface where every character has the same width, often used for code or screenplay format, is:",
+   options:["Script","Display","Monospace","Slab serif"], correct:2,
+   explain:"Monospace typefaces give every character the same width, giving a technical, typewriter feel used for code and screenplay format."},
+
+  {type:"objective", prompt:"Legibility is best described as:",
+   options:["A property of how you set the type","A property of the typeface itself — how easily individual characters are distinguished","The overall mood a typeface conveys","The spacing between lines of text"], correct:1,
+   explain:"Legibility is a property of the typeface (distinguishing individual characters); readability is a property of how you set that type."},
+
+  {type:"objective", prompt:"Two colors positioned directly opposite each other on the color wheel are called:",
+   options:["Analogous","Triadic","Complementary","Monochromatic"], correct:2,
+   explain:"Complementary colors sit directly opposite each other, giving maximum contrast and energy."},
+
+  {type:"objective", prompt:"In the 60-30-10 rule for distributing color in a composition, the 10% is the:",
+   options:["Dominant color","Secondary color","Accent color","Background color"], correct:2,
+   explain:"The 60-30-10 rule splits a composition into 60% dominant, 30% secondary, and 10% accent."},
+
+  {type:"objective", prompt:"In the C.R.A.P. design principles, the \"P\" stands for:",
+   options:["Palette","Proportion","Proximity","Pattern"], correct:2,
+   explain:"C.R.A.P. stands for Contrast, Repetition, Alignment, and Proximity — placing related elements together."},
+
+  {type:"objective", prompt:"Positioning a key subject on the lines of a 3×3 grid or at their intersections, rather than dead centre, describes the:",
+   options:["Rule of thirds","Rule of proximity","Golden ratio","Figure/ground principle"], correct:0,
+   explain:"The rule of thirds places the key subject on the lines of a 3×3 grid or at their intersections rather than dead centre."},
+
+  {type:"objective", prompt:"The Gestalt principle describing the brain's tendency to complete an implied shape or image is:",
+   options:["Similarity","Continuity","Closure","Figure/ground"], correct:2,
+   explain:"Closure is the brain's tendency to complete an implied shape or image even when it isn't fully drawn."},
+
+  // ---------------- COMPUTATION (10 + 2 for Module 3) ----------------
   {type:"computation", prompt:"Convert RGB (255, 165, 0) to a HEX color code.",
    matchType:"exact", accept:["ff a5 00","ffa500","#ffa500"],
    explain:"255 → FF, 165 → A5, 0 → 00, so RGB(255, 165, 0) = #FFA500."},
@@ -189,7 +251,15 @@ const QUESTIONS = [
 
   {type:"computation", prompt:"Convert the hex color #2E5496 back into its RGB decimal values (R, G, B).",
    matchType:"numlist", target:[46,84,150],
-   explain:"2E = 46, 54 = 84, 96 = 150, so #2E5496 = RGB(46, 84, 150) — the reverse of the worked example in Module 2."}
+   explain:"2E = 46, 54 = 84, 96 = 150, so #2E5496 = RGB(46, 84, 150) — the reverse of the worked example in Module 2."},
+
+  {type:"computation", prompt:"A poster title is set at 72pt. Since 1 point = 1/72 inch, how tall is it in inches?",
+   matchType:"approx", target:1, tolerance:0.01,
+   explain:"72pt ÷ 72 = 1 inch."},
+
+  {type:"computation", prompt:"Convert 18pt to inches (round to 2 decimal places).",
+   matchType:"approx", target:0.25, tolerance:0.01,
+   explain:"18pt ÷ 72 = 0.25 inch."}
 ];
 
 /* ===================================================================
